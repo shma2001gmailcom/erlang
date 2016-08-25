@@ -10,11 +10,6 @@ ebin
 rel/example_project
 .concrete/DEV_MODE
 .rebar
-.idea/compiler.xml
-.idea/copyright/
-.idea/emacs.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/workspace.xml
-erl0.iml
+/.idea
+*.iml
 out/

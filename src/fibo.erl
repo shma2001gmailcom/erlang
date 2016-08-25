@@ -1,6 +1,6 @@
 %%%-------------------------------------------------------------------
 %%% @author misha
-%%% @copyright (C) 2016, <COMPANY>
+%%% @copyright (C) 2016, misha
 %%% @doc
 %%% Calculate Fibonacci numbers
 %%% @end
@@ -21,7 +21,7 @@ fib(N, [PrevPrev, Prev]) -> fib(N - 1, [Prev, Prev + PrevPrev]).
 
 fib_loop(N) -> fib_loop(N, N - 1).
 
-fib_loop(_, -1) -> ok;
+fib_loop(_, -1) -> done;
 fib_loop(N, Shift) ->
   io:format(" fib(~w) = ~w~n", [N - Shift, fib(N - Shift)]),
   fib_loop(N, Shift - 1).
