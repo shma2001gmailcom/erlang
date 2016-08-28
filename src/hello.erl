@@ -10,13 +10,14 @@
 -author("misha").
 
 %% API
--export([start/0, say_something/2]).
+-export([start/1, say_something/2]).
 
 say_something(_, 0) -> done;
 say_something(Something, N) ->
   io:format("~p~n", [Something]),
   say_something(Something, N - 1).
 
-start() ->
-  spawn(hello, say_something, [hello, 3]),
-  spawn(hello, say_something, [goodbye, 3]).
+start([N]) ->
+  io:format("~n~n hello-goodbye", []),
+  spawn(hello, say_something, [hello, list_to_integer(atom_to_list(N))]),
+  spawn(hello, say_something, [goodbye, list_to_integer(atom_to_list(N))]).
