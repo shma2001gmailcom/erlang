@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
-cd ../out/production/erl0
+
+production='../out/production/erl0'
+cd ${production}
 erl -noshell -s fibo fibos 5 -s init stop
