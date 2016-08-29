@@ -40,6 +40,6 @@ message(N) -> message(N - 2).
 start([N]) ->
   io:format("~n~n ping-pong~n", []),
   Pong_pid = spawn(ping_pong, pong, []), % start pong to wait
-  spawn(ping_pong, ping, [list_to_integer(atom_to_list(N)), Pong_pid]). % start ping with parameters '[3, Pong_pid]'
+  spawn(ping_pong, ping, [list_to_integer(atom_to_list(N)), Pong_pid]). % start ping with parameters '[N, Pong_pid]'
 
 
