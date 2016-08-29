@@ -16,8 +16,8 @@ ping(0, Pong_pid) -> Pong_pid ! finished, % send 'finished' for process having i
   io:format("ping finished~n", []);
 ping(N, Pong_pid) -> Pong_pid ! {message(N), self()}, % send 'ping' to same address as above
   receive % wait for pong answer
-    left -> io:format("left reseived pong ~n", []); % case 'pong' received
-    right -> io:format("right reseived pong ~n", [])
+    left -> io:format("left reseived pong ~n", []); % case 'left' received
+    right -> io:format("right reseived pong ~n", []) % case 'right' received
   end,
   ping(N - 1, Pong_pid). % move far to waiting messages
 
@@ -25,10 +25,10 @@ pong() ->
   receive % wait for ping answer
     finished -> io:format("pong finished~n", []); % case 'finished' received
     {left, Ping_pid} -> io:format("left received ping~n", []), % case ' {left, Ping_pid}' received
-      Ping_pid ! left, % send message 'ping' to process having id 'Ping_pid'
+      Ping_pid ! left, % send message 'left' to process having id 'Ping_pid'
       pong(); % wait for messages
     {right, Ping_pid} -> io:format("right received ping~n", []), % case ' {right, Ping_pid}' received
-      Ping_pid ! right, % send message 'ping' to process having id 'Ping_pid'
+      Ping_pid ! right, % send message 'right' to process having id 'Ping_pid'
       pong() % wait for messages
   end.
 
