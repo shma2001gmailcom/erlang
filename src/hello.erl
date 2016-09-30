@@ -2,7 +2,7 @@
 %%% @author misha
 %%% @copyright (C) 2016, misha
 %%% @doc
-%%% Calculate Fibonacci numbers
+%%% spawn
 %%% @end
 %%% Created : 28. Aug 2016 9:34 PM
 %%%-------------------------------------------------------------------

@@ -2,7 +2,7 @@
 %%% @author misha
 %%% @copyright (C) 2016, <COMPANY>
 %%% @doc
-%%%
+%%% two processes interact
 %%% @end
 %%% Created : 28. Aug 2016 8:46 PM
 %%%-------------------------------------------------------------------
