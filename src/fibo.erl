@@ -10,9 +10,10 @@
 -author("misha").
 
 %% API
--export([fib/1, fib_loop/1, fibos/1]).
+-export([fibo/1, fib_loop/1, fibos/1]).
 
 fibos([N]) -> fib_loop(list_to_integer(atom_to_list(N))).
+fibo([N]) -> io:format(" fib(~w) = ~w~n", [N, fib(list_to_integer(atom_to_list(N)))]).
 
 fib(N) -> fib(N, [0, 1]).
 
